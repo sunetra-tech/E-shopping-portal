@@ -1,0 +1,66 @@
+
+.body-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+#i1
+{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+.output
+{
+  text-align: center;
+  background-color: black;
+}
+.body-text div{
+  font-size: 45px;
+  font-weight: 600;
+}
+.footer
+{
+  color:black;
+  text-align: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+.chat
+{
+  float: right;
+}
+#bt
+{
+  border-radius: 80px;
+  height: 65px;
+}
+#search{
+  padding: 0px;
+  margin:0px;
+  box-sizing: border-box;
+}
+#search{
+   margin:auto;
+   text-align:  center;
+}
+#b,#t{
+  width: 55%;
+  border-right: 0px;
+  font-size: 18px;
+  padding: 12px;
+  border:2px solid black;
+}
+#search button{
+  width: 10%;
+  background: #eee;
+  color:black;
+  float:middle;
+}

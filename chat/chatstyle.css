@@ -1,0 +1,19 @@
+/* Button used to open the chat form - fixed at the bottom of the page */
+
+.m
+{
+  width: 500px;
+  height:600px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 30px;
+  margin-left: 300px;
+  margin-top: 30px; 
+}
+
+body
+{
+  background-image: url('call.jpg');
+}
+

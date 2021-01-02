@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link href="../css/supportPage.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="AjaxPush.js"></script>
+	<link rel="stylesheet" type="text/css" href="chatstyle.css">
+</head>
+<body>
+<script type="text/javascript">
+		var comet = new AjaxPush('listener.php', 'sender.php');
+		var n = new Function("return (Math.random()*190).toFixed(0)");
+
+		// create anonymous users
+		var c = "rgb(" + n() + ", " + n() + "," + n() + ")";
+		var template = "<strong style='color: " + c + "'>" + 'user_' + n() + "</strong>: ";
+
+		// listener
+		comet.connect(function(data) { $("#history").append(data.message) + "<br>"; });
+
+		// sender
+		var send = function() {
+			comet.doRequest({ message: template + $("#message").val() + "<br>" }, function(){
+				$("#message").val('').focus();
+			})
+		}
+	</script>
+<div class="m">
+	<h1>Chat</h1>
+	<br>
+	<input type="text" autofocus id="message" placeholder="  Enter your message here!" style="width:300px;height:200px;border:none;background-color:white;"><br><br>
+	<div id="history"></div><br>
+	<button  class="btn-success" style="width: 100px;height:30px;border-radius: 30px;" onclick="send()">Send</button><br><br>
+	<br>
+</div>
+
+
+
+	
+</body>
+</html>
